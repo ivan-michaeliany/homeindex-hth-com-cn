@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 站点说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f2f2f2;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* hero 区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid #e4e9f0;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0b1c2f;
+      margin-bottom: 0.6rem;
+    }
+    .hero .sub {
+      color: #4d6278;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 1rem auto;
+    }
+    .hero .tagline {
+      display: inline-block;
+      background: #eef2f7;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #2c4b6b;
+      border: 1px solid #d9e1ec;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #e2e8f0;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: #13263b;
+      border-left: 4px solid #6b8aaa;
+      padding-left: 0.75rem;
+    }
+    .card p, .card li {
+      color: #2c3e55;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #6b8aaa;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.4rem;
+    }
+    .badge {
+      background: #f0f4fa;
+      border-radius: 30px;
+      padding: 0.25rem 1rem;
+      font-size: 0.8rem;
+      border: 1px solid #d4deeb;
+      color: #1f3c5c;
+    }
+
+    /* 链接嵌入 */
+    .inline-link {
+      color: #1a4d7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b8cade;
+      padding-bottom: 0.05rem;
+    }
+    .inline-link:hover {
+      border-bottom-color: #1a4d7a;
+    }
+
+    /* 提示卡片 */
+    .tip-card {
+      background: #f8fafc;
+      border: 1px dashed #b8cade;
+    }
+    .tip-card h2 {
+      border-left-color: #8fa7c4;
+    }
+
+    .faq-item {
+      margin-top: 1rem;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #0b1c2f;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+    }
+
+    hr {
+      margin: 1.5rem 0 1rem 0;
+      border: 0;
+      height: 1px;
+      background: #e0e6ef;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #677b92;
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      border-top: 1px solid #dde4ee;
+      padding-top: 1.5rem;
+    }
+
+    /* 响应式 */
+    @media (min-width: 600px) {
+      body {
+        padding: 3rem 2rem;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .card-grid .card:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+    @media (min-width: 800px) {
+      .hero {
+        padding: 3rem 3rem;
+      }
+      .card {
+        padding: 2rem 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>华体会 · 服务摘要</h1>
+      <p class="sub">一份整理过的站点说明，涵盖特点、场景与注意事项。</p>
+      <span class="tagline">产品说明式 · 可信描述</span>
+    </header>
+
+    <div class="card-grid">
+      <!-- 摘要卡片：全宽 -->
+      <section class="card">
+        <h2>站点摘要</h2>
+        <p><a href="https://homeindex-hth.com.cn" class="inline-link">华体会</a> 是一个面向线上内容访问的索引型站点。页面以信息整理与功能引导为主，为不同使用需求的访问者提供结构化的入口参考。本站点不直接提供内容生产，而是以导航与说明的方式呈现相关资源。</p>
+        <p style="margin-top: 1rem;">以下从亮点、使用场景、常见疑问等几个方面展开介绍，帮助新访客快速了解站点定位。</p>
+      </section>
+
+      <!-- 亮点卡片 -->
+      <section class="card">
+        <h2>主要特点</h2>
+        <ul>
+          <li>分类清晰的模块布局，减少信息过载</li>
+          <li>页面以实用性为出发点，避免冗余装饰</li>
+          <li>定期更新索引内容，保持参考价值</li>
+          <li>轻量设计，适配不同屏幕尺寸</li>
+        </ul>
+        <div class="flex-row">
+          <span class="badge">信息索引</span>
+          <span class="badge">功能引导</span>
+          <span class="badge">结构清晰</span>
+        </div>
+      </section>
+
+      <!-- 使用建议卡片 -->
+      <section class="card">
+        <h2>使用建议</h2>
+        <p>如果你正在寻找特定主题的汇总信息，可以从首页分类区域开始浏览。建议根据自己的兴趣或需求，依次查看各模块的说明，而非跳跃式点击。对于初次接触 <a href="https://homeindex-hth.com.cn" class="inline-link">华体会</a> 的用户，先阅读摘要与提示部分会更有帮助。</p>
+        <p style="margin-top: 0.8rem;">另外，移动端浏览时页面会自适应调整，横屏或平板模式下可以获得更完整的布局体验。</p>
+      </section>
+
+      <!-- 提示 + FAQ 合并卡片 -->
+      <section class="card tip-card">
+        <h2>提示与 FAQ 摘要</h2>
+        <div class="faq-item">
+          <strong>Q：站点是否收集个人数据？</strong>
+          <p>本页面仅提供索引与说明，不主动收集浏览者的个人信息。如使用外部链接，请对应查看各平台的相关政策。</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q：链接指向的内容是否可靠？</strong>
+          <p>页面所引用链接均经过基础筛选，但建议你根据自身判断进一步核实。任何线上资源都建议保持审慎。</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q：页面多久更新一次？</strong>
+          <p>根据内容变化不定期调整，尽量维持信息的时效性。如有明显变化会体现在模块标题或说明中。</p>
+        </div>
+        <hr>
+        <p style="font-size: 0.9rem; color: #3e5770;">访问时如遇到显示异常，可尝试刷新或更换浏览器。本说明页仅作介绍用途，不构成任何承诺或保证。</p>
+      </section>
+    </div>
+
+    <footer class="footer-note">
+      <p>基于 <a href="https://homeindex-hth.com.cn" class="inline-link">华体会</a> 站点整理 · 说明页 v1</p>
+    </footer>
+  </div>
+</body>
+</html>
