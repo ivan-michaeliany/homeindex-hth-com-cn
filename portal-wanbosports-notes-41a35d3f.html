@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>万博体育 · 简明访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f3ef;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: #2e2e2e;
+        }
+
+        /* 深色头图：故事开场 */
+        .hero {
+            background: linear-gradient(145deg, #0d1b2a, #1b2838);
+            color: #e6e8ea;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #c7a44d;
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 350;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #b0b8c2;
+            max-width: 580px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.6;
+        }
+
+        .hero .accent-line {
+            display: inline-block;
+            width: 60px;
+            height: 3px;
+            background: #c7a44d;
+            margin: 0.2rem 0 1.8rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto;
+            color: #ced4da;
+        }
+
+        /* 浅色正文区 */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+            background-color: #faf9f7;
+        }
+
+        .section-title {
+            font-weight: 360;
+            font-size: 1.6rem;
+            color: #1f2a36;
+            border-left: 4px solid #c7a44d;
+            padding-left: 1rem;
+            margin: 2.8rem 0 1.2rem;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0.8rem;
+        }
+
+        .content p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #3b3b3b;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            background: #f0eee9;
+            padding: 1.4rem 2rem;
+            border-radius: 12px;
+            margin: 1.8rem 0 2.2rem;
+        }
+
+        /* 特点列表 — 温和卡片风格 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #ffffff;
+            border: 1px solid #e2ddd4;
+            border-radius: 16px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 450;
+            color: #1d2a38;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #4f4f4f;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .feature-item .emoji-deco {
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+            opacity: 0.8;
+        }
+
+        /* 访问提醒区块 */
+        .reminder-box {
+            background: #eae7e0;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0 1.8rem;
+            border-left: 5px solid #c7a44d;
+        }
+
+        .reminder-box h3 {
+            font-weight: 400;
+            font-size: 1.3rem;
+            color: #1c2a36;
+            margin-bottom: 0.8rem;
+        }
+
+        .reminder-box ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .reminder-box li {
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+            font-size: 0.98rem;
+            color: #3b3b3b;
+        }
+
+        .reminder-box li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #a58d5e;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            margin: 2.2rem 0 1rem;
+        }
+
+        .faq-mini details {
+            border-bottom: 1px solid #dcd7ce;
+            padding: 0.9rem 0;
+        }
+
+        .faq-mini summary {
+            font-weight: 430;
+            font-size: 1rem;
+            color: #1d2a38;
+            cursor: pointer;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini summary::after {
+            content: '＋';
+            font-size: 1.2rem;
+            color: #a58d5e;
+            transition: 0.2s;
+        }
+
+        .faq-mini details[open] summary::after {
+            content: '−';
+        }
+
+        .faq-mini details p {
+            padding: 0.6rem 0.3rem 0.2rem;
+            font-size: 0.95rem;
+            color: #4e4e4e;
+            margin: 0;
+        }
+
+        /* 链接强调色 */
+        a {
+            color: #9f7e3c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: #735f2b;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dad5cb;
+            font-size: 0.95rem;
+            color: #5f5b53;
+            text-align: center;
+        }
+
+        .closing span {
+            display: inline-block;
+            margin: 0 0.3rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero {
+                padding: 4rem 1.5rem 3.5rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .content {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .feature-item {
+                flex: 1 1 auto;
+            }
+            .reminder-box {
+                padding: 1.2rem 1.2rem;
+            }
+            .intro-text {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 · 故事开场 -->
+    <section class="hero">
+        <h1>万博体育</h1>
+        <div class="sub">一个关于访问、探索与节奏的简短叙述</div>
+        <div class="accent-line"></div>
+        <p>
+            有些时候，我们需要的不是繁复的入口，而是一份清晰的指引，<br />
+            以及一种温和的节奏，让自己从容地走到想去的页面。
+        </p>
+    </section>
+
+    <!-- 浅色正文区 -->
+    <main class="content">
+
+        <!-- 承接段落：简明指南角度 -->
+        <p class="intro-text">
+            这篇文章不是什么使用手册，更像是一份轻量的走访笔记。如果你正在寻找一个稳定的访问路径，或者想了解<strong>万博体育</strong>的大致轮廓，下面的内容或许能给你一些参照。从打开页面到熟悉环境，每一步都可以很安静。
+        </p>
+
+        <!-- 特点列表 -->
+        <h2 class="section-title">几个常见的特点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="emoji-deco">🕊️</span>
+                <h3>界面偏简</h3>
+                <p>没有过度装饰的板块，主要功能区域一目了然。适合不喜欢被信息流淹没的人。</p>
+            </div>
+            <div class="feature-item">
+                <span class="emoji-deco">📎</span>
+                <h3>频道清晰</h3>
+                <p>体育、赛事、资讯等栏目区分明确，切换时延迟较低，浏览过程比较顺滑。</p>
+            </div>
+            <div class="feature-item">
+                <span class="emoji-deco">🔐</span>
+                <h3>基础提醒</h3>
+                <p>访问时留意网络环境与浏览器设置，多数静态内容无需额外插件即可加载。</p>
+            </div>
+            <div class="feature-item">
+                <span class="emoji-deco">🔄</span>
+                <h3>持续更新</h3>
+                <p>内容源会跟随赛事与资讯节奏刷新，保持一定的新鲜度，但不会过度推送。</p>
+            </div>
+        </div>
+
+        <!-- 访问提醒 —— 温和叙述 -->
+        <div class="reminder-box">
+            <h3>访问时的小提醒</h3>
+            <ul>
+                <li>建议使用主流浏览器，并保持为较新版本，以减少排版偏移。</li>
+                <li>如果页面加载稍慢，可以尝试刷新或稍后再试，不必反复点击。</li>
+                <li>部分功能可能因地区或网络服务商而异，属于正常现象。</li>
+                <li>书签保存 <a href="https://portal-wanbosports.com">万博体育</a> 主域，方便日后直接进入。</li>
+            </ul>
+        </div>
+
+        <!-- 场景 + 连接自然嵌入 -->
+        <p>
+            有一次，朋友问我平时怎么找到体育资讯。我给他发了链接，顺带说了一句：「直接搜 <a href="https://portal-wanbosports.com">万博体育</a> 就行，首页就能看到最近的赛事列表。」他后来告诉我，比想象中简单——没有弹窗广告，也没有绕来绕去的导航。这种体验，大概就是「简洁」带来的好感。
+        </p>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title" style="margin-top: 3rem;">简要问答</h2>
+        <div class="faq-mini">
+            <details>
+                <summary>这个网站适合偶尔浏览的人吗？</summary>
+                <p>是的。页面结构偏静态，没有强制注册或频繁弹窗，偶尔打开看看不会有负担。</p>
+            </details>
+            <details>
+                <summary>移动端体验如何？</summary>
+                <p>响应式布局适配手机和平板，字体大小和按钮间距在手持设备上也还算舒适。</p>
+            </details>
+            <details>
+                <summary>是否需要安装额外软件？</summary>
+                <p>不需要。所有内容都基于浏览器，没有额外下载要求。</p>
+            </details>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            <span>一份安静的访问指南</span>
+            <span>·</span>
+            <span>希望对你有所帮助</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
